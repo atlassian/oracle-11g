@@ -34,6 +34,9 @@ start_db() {
 		alter system register;
 		exit 0
 	EOF
+        echo "#########################"
+        echo "DATABASE IS READY TO USE!"
+        echo "#########################"
 	while read line; do echo -e "sqlplus: $line"; done
 	wait $MON_ALERT_PID
 }
