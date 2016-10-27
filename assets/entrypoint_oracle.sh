@@ -51,6 +51,8 @@ create_db() {
 	#MON_LSNR_PID=$!
         echo "START DBCA"
 	dbca -silent -createDatabase -responseFile /assets/dbca.rsp
+        cp /asserts/listener.ora opt/oracle/app/product/11.2.0/dbhome_1/network/admin/
+        cp /asserts/tnsnames.ora opt/oracle/app/product/11.2.0/dbhome_1/network/admin/
 	echo_green "Database created."
 	date "+%F %T"
 	change_dpdump_dir
